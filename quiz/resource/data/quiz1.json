@@ -1,14 +1,20 @@
 {
+"time":
+{
+"minutes":35,
+"seconds":00,
+},
+	"title": "JavaScript Quiz",
+	"submitURL": "lib/com/fahimchowdhury/submit.php",
 	"questions": [
 		{
 			"id": 0,
-			"type":"radio",
+			"type": "radio",
 			"question": "what is a Scope",
 			"answers": ["Something you look through", "the current window"]
-		},
-		{
+		}, {
 			"id": 1,
-			"type":"code",
+			"type": "code",
 			"question": "how do you write a Singleton?",
 			"answers": ["var,={,};"]
 		}
