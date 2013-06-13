@@ -18,8 +18,8 @@ var Countdown = {
 			if (this.minutes == 0) {
 				
 				data.end = true;
-				clearInterval(this.interval);
 				
+				this.stop();
 			} else {
 				this.minutes--;
 				this.seconds = 60;
@@ -43,5 +43,9 @@ var Countdown = {
 		
 		if (this.callback)
 			this.callback(data);
+	},
+	stop:function()
+	{
+		clearInterval(this.interval);
 	}
 }

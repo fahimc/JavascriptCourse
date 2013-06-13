@@ -16,7 +16,7 @@
 			"id": 1,
 			"type": "code",
 			"question": "how do you write a Singleton?",
-			"answers": ["var,={,};"]
+			"answers": []
 		}
 	]
 }

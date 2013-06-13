@@ -1,0 +1,11 @@
+{
+	"answers": [
+		{
+			"type": "radio",
+			"answer": 0
+		}, {
+			"type": "code",
+			"answer": "var,={,};"
+		}
+	]
+}
