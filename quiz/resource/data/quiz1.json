@@ -1,7 +1,7 @@
 {
 "time":
 {
-"minutes":35,
+"minutes":20,
 "seconds":00,
 },
 	"title": "JavaScript Quiz",
@@ -10,12 +10,74 @@
 		{
 			"id": 0,
 			"type": "radio",
-			"question": "what is a Scope",
-			"answers": ["Something you look through", "the current window"]
+			"question": "what is a Scope?",
+			"answers": ["Something you look through", "the current window","the current tab","the current location in the script"]
 		}, {
 			"id": 1,
 			"type": "code",
-			"question": "how do you write a Singleton?",
+			"question": "how do you write an empty Singleton class?",
+			"answers": []
+		}, {
+			"id": 2,
+			"type": "code",
+			"question": "how do you encapsulating code?",
+			"answers": []
+		},
+		{
+			"id": 3,
+			"type": "radio",
+			"question": "How do you attach an 'onload' event to the window in IE 8 and below?",
+			"answers": [" window.addEventListener(\"load\", onLoad);", "window.attachEvent(\"onload\", onLoad);","window.addEventListener(\"onload\", onLoad);","window.attachEvent(\"load\", onLoad);"]
+		}, {
+			"id": 4,
+			"type": "code",
+			"question": "How do you create a div element and store it in a variable called 'myDiv' then append it to the body?",
+			"answers": []
+		},
+		{
+			"id": 5,
+			"type": "radio",
+			"question": "How do you attach an attribute to a DOM element?",
+			"answers": ["myDiv.setAttribute(\"index\",123456);", "myDiv.index=123456","myDiv.createAttribute(\"index\",123456);","myDiv.index(123456);"]
+		},{
+			"id": 6,
+			"type": "code",
+			"question": "how do you add a class name to a DOM element which is named 'myDiv'?",
+			"answers": []
+		}, {
+			"id": 7,
+			"type": "code",
+			"question": "how do you change the width of a DOM element which is named 'myDiv'?",
+			"answers": []
+		},{
+			"id": 8,
+			"type": "radio",
+			"question": "How do destroy an object (Garbage Collection)?",
+			"answers": ["test = null", "test = undefined","destroy test","delete test"]
+		}, {
+			"id": 9,
+			"type": "code",
+			"question": "how do you write an empty instance class which is named 'Car'?",
+			"answers": []
+		}, {
+			"id": 10,
+			"type": "code",
+			"question": "how do you write an inheritable variable called 'width' in a class called 'Shape'?",
+			"answers": []
+		}, {
+			"id": 11,
+			"type": "radio",
+			"question": "how do you parse a JSON object in IE?",
+			"answers": ["JSON.parse(jsonString);","eval('(' + jsonString + ')');","parseJSON(jsonString);","eval( jsonString );"]
+		}, {
+			"id": 12,
+			"type": "code",
+			"question": "how do you parse 25.5 as an integer?",
+			"answers": []
+		}, {
+			"id": 13,
+			"type": "code",
+			"question": "how do you check if an object called 'name' is a type of a String?",
 			"answers": []
 		}
 	]

@@ -2,10 +2,49 @@
 	"answers": [
 		{
 			"type": "radio",
+			"answer": 3
+		}, {
+			"type": "code",
+			"answer": "var,=,{,};"
+		}
+		, {
+			"type": "code",
+			"answer": "(function(,),{,},)(,);"
+		},
+		{
+			"type": "radio",
+			"answer": 1
+		}, {
+			"type": "code",
+			"answer": "var myDiv,=,document.createElement(,DIV,);,document.body.appendChild(myDiv);"
+		},
+		{
+			"type": "radio",
 			"answer": 0
 		}, {
 			"type": "code",
-			"answer": "var,={,};"
+			"answer": "myDiv.className,=,;"
+		},{
+			"type": "code",
+			"answer": "myDiv.style.width,=,;"
+		},{
+			"type": "radio",
+			"answer": 3
+		},{
+			"type": "code",
+			"answer": "var Car,=,function,(,),{,},;"
+		},{
+			"type": "code",
+			"answer": "Shape.prototype.width,=,;"
+		},{
+			"type": "radio",
+			"answer": 1
+		},{
+			"type": "code",
+			"answer": "parseInt,(,),25.5,;"
+		},{
+			"type": "code",
+			"answer": "typeof name"
 		}
 	]
 }

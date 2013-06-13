@@ -1,6 +1,6 @@
 var test="hello world";
 (function(window) {
-	
+	var myDiv;
 	function Main() {
 		if (window.addEventListener) {
 			window.addEventListener("load", onLoad);
@@ -13,7 +13,7 @@ var test="hello world";
 	function onLoad() {
 		// the body has loaded.
 		// start coding here!
-		var myDiv = document.createElement("DIV");
+		myDiv = document.createElement("DIV");
 		myDiv.className = "box";
 		myDiv.className+=" hide";
 		console.log(myDiv.className);
@@ -54,6 +54,14 @@ var test="hello world";
 	function onClick(event)
 	{
 		console.log(event);
+	}
+	function hide()
+	{
+		myDiv.style.display="none";
+	}
+	function show()
+	{
+		myDiv.style.display="block";
 	}
 	Main();
 }

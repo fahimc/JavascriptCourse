@@ -63,17 +63,20 @@
 	function onStartClick(event)
 	{
 		document.getElementById("formError").style.visibility="hidden";
-		var firstName = document.getElementById("firstName"); 
-		var lastName = document.getElementById("lastName"); 
+		var fName = document.getElementById("firstName"); 
+		var lName = document.getElementById("lastName"); 
 		var emailAdd = document.getElementById("emailAdd"); 
 		var error=false;
-		if(firstName.value==""||firstName.value==" "||lastName.value==""||lastName.value==" "||emailAdd.value==""||emailAdd.value==" ")error=true;
+		if(fName.value==""||fName.value==" "||lName.value==""||lName.value==" "||emailAdd.value==""||emailAdd.value==" ")error=true;
 		if(emailAdd.value.indexOf("@")<0||emailAdd.value.indexOf(".")<0)error =true;
 		
 		if(error)
 		{
 			document.getElementById("formError").style.visibility="visible";
 		}else{
+			email = emailAdd.value;
+			firstName = fName.value;
+			lastName = lName.value;
 			hideForm();
 			showQuiz();
 			startQuiz();
@@ -162,7 +165,7 @@
 		var answer = data.questions[currentIndex].answers[0];
 		var str = document.getElementById("answerText");
 		
-			answers[currentIndex]=str.value;
+			answers[currentIndex]=str.value.replace(/(\r\n|\n|\r)/gm,"");
 	}
 
 	function buildQuestion() {
@@ -268,7 +271,7 @@
 	function showComplete()
 	{
 		document.getElementById("waiting").style.display="none";
-		document.getElementById("perNumber").innerHTML = score;
+		document.getElementById("perNumber").innerHTML = Math.ceil(score);
 		document.getElementById("showResult").style.display="block";
 	}
 	Main();
