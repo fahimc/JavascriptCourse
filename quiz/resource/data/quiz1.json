@@ -6,6 +6,29 @@
 },
 	"title": "JavaScript Quiz",
 	"submitURL": "lib/com/fahimchowdhury/submit.php",
+	"grades":
+	[
+	{
+	"max":59,
+	"grade":"FAILED",
+	"message":"<p>You have <span class='grade'>FAILED</span> the Quiz.</p><p>Your JavaScript level is: <br><span class='level'>LEARNER</span></p>"
+	},
+	{
+	"max":75,
+	"grade":"PASS",
+	"message":"<p>Your grade is a <br><span class='grade'>PASS</span>.</p><p>Your JavaScript level is: <br><span class='level'>JUNIOR</span></p>"
+	},
+	{
+	"max":85,
+	"grade":"MERIT",
+	"message":"<p>Your grade is a <br><span class='grade'>MERIT</span>.</p><p>Your JavaScript level is: <br><span class='level'>MID-WEIGHT</span></p>"
+	},
+	{
+	"max":100,
+	"grade":"DISTINCTION",
+	"message":"<p>Your grade is a <br><span class='grade'>DISTINCTION</span>.</p><p>Your JavaScript level is: <br><span class='level'>SENIOR</span></p>"
+	}
+	],
 	"questions": [
 		{
 			"id": 0,
@@ -16,12 +39,14 @@
 			"id": 1,
 			"type": "code",
 			"question": "how do you write an empty Singleton class?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		}, {
 			"id": 2,
 			"type": "code",
 			"question": "how do you encapsulating code?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		},
 		{
 			"id": 3,
@@ -32,7 +57,8 @@
 			"id": 4,
 			"type": "code",
 			"question": "How do you create a div element and store it in a variable called 'myDiv' then append it to the body?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		},
 		{
 			"id": 5,
@@ -43,12 +69,14 @@
 			"id": 6,
 			"type": "code",
 			"question": "how do you add a class name to a DOM element which is named 'myDiv'?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		}, {
 			"id": 7,
 			"type": "code",
 			"question": "how do you change the width of a DOM element which is named 'myDiv'?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		},{
 			"id": 8,
 			"type": "radio",
@@ -58,12 +86,14 @@
 			"id": 9,
 			"type": "code",
 			"question": "how do you write an empty instance class which is named 'Car'?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		}, {
 			"id": 10,
 			"type": "code",
 			"question": "how do you write an inheritable variable called 'width' in a class called 'Shape'?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		}, {
 			"id": 11,
 			"type": "radio",
@@ -73,12 +103,14 @@
 			"id": 12,
 			"type": "code",
 			"question": "how do you parse 25.5 as an integer?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		}, {
 			"id": 13,
 			"type": "code",
 			"question": "how do you check if an object called 'name' is a type of a String?",
-			"answers": []
+			"answers": [],
+			"tip":"Note: Don't forget the semi-colon!"
 		}
 	]
 }

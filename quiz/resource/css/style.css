@@ -136,6 +136,12 @@ body,html
 	color:#558C89;
 	font-weight: 800;
 }
+#questionHolder .tip
+{
+	padding-top: 10px;
+	font-size: 11px;
+	color:  #558C89;
+}
 #questionCopy
 {
 	padding: 5px;
@@ -200,11 +206,28 @@ body,html
 	margin-top:20px;
 	font-size: 50px;
 	color:#67BCDB;
+	font-weight: 800;
 }
 #showResult p
 {
 	padding-top:10px; 
 	
+}
+#gradeMessage
+{
+	margin-top: 20px;
+	color: #A2AB34;
+}
+#gradeMessage .grade
+{
+	font-size: 30px;
+	font-weight: 800;
+}
+#gradeMessage .level
+{
+	font-size: 30px;
+	padding-top: 20px;
+	font-weight: 800;
 }
 iframe
 {

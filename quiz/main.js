@@ -4,9 +4,9 @@
 	var firstName = "";
 	var lastName = "";
 	var currentIndex = 0;
-	var answers =[];
-	var score =0;
-	var time={};
+	var answers = [];
+	var score = 0;
+	var time = {};
 	function Main() {
 		if (window.addEventListener) {
 			window.addEventListener("load", onLoad);
@@ -18,62 +18,63 @@
 
 	function onLoad() {
 		// check shape class
-		Utensil.URLLoader.load("resource/data/quiz1.json?rand="+Math.random(), onJSONLoaded);
+		Utensil.URLLoader.load("resource/data/quiz1.json?rand=" + Math.random(), onJSONLoaded);
 
 	}
 
 	function onJSONLoaded(t, x) {
 		data = eval("(" + t + ")");
-		
+
 		buildQuestion();
 		setPage();
 		Utensil.addListener(document.getElementById("nextButton"), "click", onNextClick);
 		Utensil.addListener(document.getElementById("previousButton"), "click", onPreviousClick);
 		Utensil.addListener(document.getElementById("formButton"), "click", onStartClick);
-		Countdown.callback=onCountdown;
+		Countdown.callback = onCountdown;
 		showForm();
 	}
-	function showForm()
-	{
-		document.getElementById("regForm").style.visibility="visible";
+
+	function showForm() {
+		document.getElementById("regForm").style.visibility = "visible";
 	}
-	function hideQuiz()
-	{
-		document.getElementById("quizHolder").style.display="none";
+
+	function hideQuiz() {
+		document.getElementById("quizHolder").style.display = "none";
 	}
-	function showQuiz()
-	{
-		document.getElementById("quizHolder").style.display="block";
+
+	function showQuiz() {
+		document.getElementById("quizHolder").style.display = "block";
 	}
-	function hideForm()
-	{
-		document.getElementById("regForm").style.display="none";
+
+	function hideForm() {
+		document.getElementById("regForm").style.display = "none";
 	}
-	function startQuiz()
-	{
-		Countdown.minutes=data.time.minutes;
-		Countdown.seconds=data.time.seconds;
+
+	function startQuiz() {
+		Countdown.minutes = data.time.minutes;
+		Countdown.seconds = data.time.seconds;
 		Countdown.start();
 	}
-	function setPage()
-	{
-		document.getElementById("quizTime").innerHTML = data.time.minutes+" minutes and "+data.time.seconds+" seconds";
+
+	function setPage() {
+		document.getElementById("quizTime").innerHTML = data.time.minutes + " minutes and " + data.time.seconds + " seconds";
 		document.getElementById("quizTitle").innerHTML = data.title;
 	}
-	function onStartClick(event)
-	{
-		document.getElementById("formError").style.visibility="hidden";
-		var fName = document.getElementById("firstName"); 
-		var lName = document.getElementById("lastName"); 
-		var emailAdd = document.getElementById("emailAdd"); 
-		var error=false;
-		if(fName.value==""||fName.value==" "||lName.value==""||lName.value==" "||emailAdd.value==""||emailAdd.value==" ")error=true;
-		if(emailAdd.value.indexOf("@")<0||emailAdd.value.indexOf(".")<0)error =true;
-		
-		if(error)
-		{
-			document.getElementById("formError").style.visibility="visible";
-		}else{
+
+	function onStartClick(event) {
+		document.getElementById("formError").style.visibility = "hidden";
+		var fName = document.getElementById("firstName");
+		var lName = document.getElementById("lastName");
+		var emailAdd = document.getElementById("emailAdd");
+		var error = false;
+		if (fName.value == "" || fName.value == " " || lName.value == "" || lName.value == " " || emailAdd.value == "" || emailAdd.value == " ")
+			error = true;
+		if (emailAdd.value.indexOf("@") < 0 || emailAdd.value.indexOf(".") < 0)
+			error = true;
+
+		if (error) {
+			document.getElementById("formError").style.visibility = "visible";
+		} else {
 			email = emailAdd.value;
 			firstName = fName.value;
 			lastName = lName.value;
@@ -81,63 +82,63 @@
 			showQuiz();
 			startQuiz();
 		}
-		
+
 	}
+
 	function onNextClick(event) {
-			checkAnswer();
+		checkAnswer();
 		showPreviousButton();
-		
-		if (currentIndex >= data.questions.length-1) {
+
+		if (currentIndex >= data.questions.length - 1) {
 			Countdown.stop();
 			end();
-			
+
 		} else {
 			currentIndex++;
 			buildQuestion();
-			if (currentIndex >= data.questions.length-1)
-			document.getElementById("nextButton").innerHTML="submit";
+			if (currentIndex >= data.questions.length - 1)
+				document.getElementById("nextButton").innerHTML = "submit";
 		}
 	}
-	function onPreviousClick(event)
-	{
-		if (currentIndex >= data.questions.length-1)
-			document.getElementById("nextButton").innerHTML="next";
+
+	function onPreviousClick(event) {
+		if (currentIndex >= data.questions.length - 1)
+			document.getElementById("nextButton").innerHTML = "next";
 		currentIndex--;
-		if(currentIndex<=0)
-		{
-			currentIndex=0;
+		if (currentIndex <= 0) {
+			currentIndex = 0;
 			hidePreviousButton();
 		}
 		buildQuestion();
-		
-		
+
 	}
-	function showPreviousButton()
-	{
-		document.getElementById("previousButton").style.display="block";
+
+	function showPreviousButton() {
+		document.getElementById("previousButton").style.display = "block";
 	}
-	function hidePreviousButton()
-	{
-		document.getElementById("previousButton").style.display="none";
+
+	function hidePreviousButton() {
+		document.getElementById("previousButton").style.display = "none";
 	}
-	function showEndPage()
-	{
-		document.getElementById("completeHolder").style.display="block";
+
+	function showEndPage() {
+		document.getElementById("completeHolder").style.display = "block";
 	}
-	function end()
-	{
+
+	function end() {
 		hideQuiz();
 		showEndPage();
 		post_to_url(data.submitURL, {
-				"answers" : answers.toString(),
-				"email":email,
-				"firstname":firstName,
-				"lastname":lastName,
-				"minutes":time.minutes,
-				"seconds":time.seconds
+			"answers" : answers.toString(),
+			"email" : email,
+			"firstname" : firstName,
+			"lastname" : lastName,
+			"minutes" : time.minutes,
+			"seconds" : time.seconds
 
-			}, "POST");
+		}, "POST");
 	}
+
 	function checkAnswer() {
 		switch(data.questions[currentIndex].type) {
 			case "radio":
@@ -154,18 +155,18 @@
 
 		for (var i = 0, length = radios.length; i < length; i++) {
 			if (radios[i].checked) {
-				answers[currentIndex]=radios[i].value;
+				answers[currentIndex] = radios[i].value;
 				return;
 			}
 		}
-		answers[currentIndex]=false;
+		answers[currentIndex] = false;
 	}
 
 	function checkCode() {
 		var answer = data.questions[currentIndex].answers[0];
 		var str = document.getElementById("answerText");
-		
-			answers[currentIndex]=str.value.replace(/(\r\n|\n|\r)/gm,"");
+
+		answers[currentIndex] = str.value.replace(/(\r\n|\n|\r)/gm, "");
 	}
 
 	function buildQuestion() {
@@ -189,18 +190,18 @@
 			var answer = data.questions[currentIndex].answers[a];
 			var li = document.createElement("LI");
 			var radio = document.createElement("INPUT");
-			radio.className="radio";
+			radio.className = "radio";
 			var p = document.createElement("P");
 			var number = document.createElement("P");
-			number.className="number";
+			number.className = "number";
 			var clear = document.createElement("div");
-			clear.className="clearBoth";
+			clear.className = "clearBoth";
 			radio.type = "radio";
 			if (a == 0)
 				radio.checked = "checked";
 			radio.name = "answer";
 			p.innerHTML = answer;
-			number.innerHTML = (a+1)+". ";
+			number.innerHTML = (a + 1) + ". ";
 			radio.value = a;
 			li.appendChild(number);
 			li.appendChild(radio);
@@ -215,6 +216,13 @@
 		var text = document.createElement("TEXTAREA");
 		text.id = "answerText";
 		li.appendChild(text);
+		if (data.questions[currentIndex].tip) {
+			var p = document.createElement("P");
+			p.className="tip";
+			p.innerHTML = data.questions[currentIndex].tip;
+			li.appendChild(p);
+
+		}
 		document.getElementById("answers").appendChild(li);
 	}
 
@@ -244,36 +252,45 @@
 		document.body.appendChild(form);
 		form.submit();
 	}
-	function onCountdown(obj)
-	{
-		
-		if(obj.end==true)end();
+
+	function onCountdown(obj) {
+
+		if (obj.end == true)
+			end();
 		time.minutes = obj.minutes;
 		time.seconds = obj.seconds;
-		document.getElementById("countdown").innerHTML=obj.minutes+":"+obj.seconds;
+		document.getElementById("countdown").innerHTML = obj.minutes + ":" + obj.seconds;
 	}
-	
-	window.onFocus=function()
-	{
-		document.getElementById("formError").style.visibility="hidden";
+
+
+	window.onFocus = function() {
+		document.getElementById("formError").style.visibility = "hidden";
 	}
-	window.submitComplete=function(val)
-	{
+	window.submitComplete = function(val) {
 		console.log(val);
-		if(val==-1)
-		{
-			
-		}else{
-			score=val;
-			 showComplete();
+		if (val == -1) {
+
+		} else {
+			score = val;
+			showComplete();
 		}
 	}
-	function showComplete()
-	{
-		document.getElementById("waiting").style.display="none";
+	function showComplete() {
+		document.getElementById("waiting").style.display = "none";
 		document.getElementById("perNumber").innerHTML = Math.ceil(score);
-		document.getElementById("showResult").style.display="block";
+		document.getElementById("showResult").style.display = "block";
+		
+		for(var a=0;a<data.grades.length;a++)
+		{
+			if(Math.ceil(score)<=data.grades[a].max)
+			{
+				document.getElementById("gradeMessage").innerHTML = data.grades[a].message;
+				return;
+			}
+		}
+		//
 	}
+
 	Main();
 }
 )(window);
