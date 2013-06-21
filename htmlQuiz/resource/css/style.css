@@ -235,3 +235,9 @@ iframe
 	height:0;
 	visibility: hidden;
 }
+#wrongTitle
+{
+	color:#E44424;
+	margin-top: 20px;
+	display: none;
+}

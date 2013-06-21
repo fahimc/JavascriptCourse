@@ -14,17 +14,24 @@ if (isset($data) && isset($email)) {
 	//echo $data;
 	$data = explode(",", $data);
 	$correctCount = 0;
+	$wrong="";
 	for ($a = 0; $a < count($data); $a++) {
 		$answer = $data[$a];
 		$currentAnswer=$answersJson[$a];
 		switch($currentAnswer->type) {
 			case "radio" :
 				if ($answer == $currentAnswer->answer)
-					$correctCount++;
+				{
+					$correctCount++;					
+				}else{
+					$wrong.=($a>0?",":"").$a;
+				}
 				break;
 			case "code" :
 				if (checkCode($currentAnswer->answer, $answer)) {
 					$correctCount++;
+				}else{
+					$wrong.=($a>0?",":"").$a;
 				}
 				break;
 		}
@@ -47,7 +54,7 @@ $headers = 'From: fahim.chowdhury1985@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 mail($to, $subject, $message, $headers);
-		echo "<script>window.parent.submitComplete($percentage)</script>";
+		echo "<script>window.parent.submitComplete($percentage,'".$wrong."')</script>";
 	// }
 // 
 	// mysqli_close($con);

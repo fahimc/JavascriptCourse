@@ -266,27 +266,40 @@
 	window.onFocus = function() {
 		document.getElementById("formError").style.visibility = "hidden";
 	}
-	window.submitComplete = function(val) {
-		console.log(val);
+	window.submitComplete = function(val,wrong) {
+		
+		var w = wrong.split(",");
+		
 		if (val == -1) {
 
 		} else {
 			score = val;
-			showComplete();
+			showComplete(w);
 		}
 	}
-	function showComplete() {
+	function showComplete(w) {
 		document.getElementById("waiting").style.display = "none";
 		document.getElementById("perNumber").innerHTML = Math.ceil(score);
 		document.getElementById("showResult").style.display = "block";
+		document.getElementById("wrongTitle").style.display = "none";
+		document.getElementById("wrongHolder").innerHTML = "";
 		
 		for(var a=0;a<data.grades.length;a++)
 		{
 			if(Math.ceil(score)<=data.grades[a].max)
 			{
 				document.getElementById("gradeMessage").innerHTML = data.grades[a].message;
-				return;
+				break;
 			}
+		}
+		if(w.length>0)
+		{
+			document.getElementById("wrongTitle").style.display = "block";
+			document.getElementById("wrongHolder").innerHTML = "";
+		}
+		for(var a=0;a<w.length;a++)
+		{
+			document.getElementById("wrongHolder").innerHTML+="Question "+w[a]+"<br>";
 		}
 		//
 	}
