@@ -41,7 +41,7 @@ if (isset($data) && isset($email)) {
 
 $to      = $email;
 $subject = 'HTML Quiz';
-$message = "Hi ".$firstName." ".$lastName.',\r\nHere is your quiz result. \r\n'.$percentage."%";
+$message = "Hi ".$firstName." ".$lastName.",\r\nHere is your quiz result. \r\n".$percentage."%";
 $headers = 'From: fahim.chowdhury1985@gmail.com' . "\r\n" .
     'Reply-To: fahim.chowdhury1985@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
