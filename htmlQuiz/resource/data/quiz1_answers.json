@@ -1,0 +1,43 @@
+{
+	"answers": [
+		{
+			"type": "code",
+			"answer": "<a, href=,http://google.com,>,click here,</a>"
+		}, {
+			"type": "code",
+			"answer": "<ol>,<li>,coffee,milk,bread,</li>,</ol>"
+		}, {
+			"type": "code",
+			"answer": "<input, type=,radio,name=,gender,value=,male,female,>"
+		}
+		, {
+			"type": "code",
+			"answer": "<!--[if,IE,lte,8,]>"
+		}
+		, {
+			"type": "radio",
+			"answer": 1
+		}
+		, {
+			"type": "radio",
+			"answer": 2
+		}
+		
+		, {
+			"type": "radio",
+			"answer": 0
+		}
+		, {
+			"type": "code",
+			"answer": "<meta,http-equiv=,refresh,content=,5,/>"
+		}
+		, {
+			"type": "radio",
+			"answer": 3
+		}
+		, {
+			"type": "code",
+			"answer": "<noscript>,<p>,</p>,You need JS,</noscript>"
+		}
+	]
+}

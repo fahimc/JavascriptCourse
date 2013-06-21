@@ -1,0 +1,95 @@
+{
+"time":
+{
+"minutes":20,
+"seconds":00,
+},
+	"title": "HTML Quiz",
+	"submitURL": "lib/com/fahimchowdhury/submit.php",
+	"grades":
+	[
+	{
+	"max":59,
+	"grade":"FAILED",
+	"message":"<p>You have <span class='grade'>FAILED</span> the Quiz.</p><p>Your HTML level is: <br><span class='level'>LEARNER</span></p>"
+	},
+	{
+	"max":75,
+	"grade":"PASS",
+	"message":"<p>Your grade is a <br><span class='grade'>PASS</span>.</p><p>Your HTML level is: <br><span class='level'>JUNIOR</span></p>"
+	},
+	{
+	"max":85,
+	"grade":"MERIT",
+	"message":"<p>Your grade is a <br><span class='grade'>MERIT</span>.</p><p>Your HTML level is: <br><span class='level'>MID-WEIGHT</span></p>"
+	},
+	{
+	"max":100,
+	"grade":"DISTINCTION",
+	"message":"<p>Your grade is a <br><span class='grade'>DISTINCTION</span>.</p><p>Your HTML level is: <br><span class='level'>SENIOR</span></p>"
+	}
+	],
+	"questions": [
+		{
+			"id": 0,
+			"type": "code",
+			"question": "How do you create a link in HTML which links to 'http://google.com' and the link text is 'click here'",
+			"answers": [],
+			
+		}, {
+			"id": 1,
+			"type": "code",
+			"question": "Write an ordered list with the following list items, coffee, milk and bread.",
+			"answers": [],
+			
+		}, {
+			"id": 2,
+			"type": "code",
+			"question": "Write a code which displays two radio buttons that are grouped together so you can only select one option or the other. Call the group 'gender' and the values should be 'male' and 'female'.",
+			"answers": [],
+			
+		}
+		, {
+			"id": 3,
+			"type": "code",
+			"question": "How do you write a conditional statement to check if the browser is equal and less than IE 8?",
+			"answers": [],
+			
+		}
+		, {
+			"id": 4,
+			"type": "radio",
+			"question": "How do you tab index?",
+			"answers": ['<li><a href="here.html" tabIndex="1">Here</a></li>','<li><a href="here.html" tabindex="1">Here</a></li>','<li><a href="here.html" index="1">Here</a></li>','<li><a href="here.html" tab-index="1">Here</a></li>']
+		}
+		, {
+			"id": 5,
+			"type": "radio",
+			"question": "How do you set an input field type for a telephone number?",
+			"answers": ['<input type="text" name="telephone_number">','<input type="telephone" name="telephone_number">','<input type="tel" name="telephone_number">','<input type="number" name="telephone_number">']
+		}
+		, {
+			"id": 6,
+			"type": "radio",
+			"question": "How do you set an auto play on a video?",
+			"answers": ['<video src="kitties.mp4" autoplay></video>','<video src="kitties.mp4" autoplay="true"></video>','<video src="kitties.mp4" auto-play="true"></video>','<video src="kitties.mp4" auto></video>']
+		}, {
+			"id": 7,
+			"type": "code",
+			"question": "Write a meta tag which refreshes the page after 5 seconds",
+			"answers": [],
+			
+		}, {
+			"id": 8,
+			"type": "radio",
+			"question": "What is the character code for no break space?",
+			"answers": ['&nospace;','&nspace;','&spnb;','&nbsp;']
+		}
+		, {
+			"id": 9,
+			"type": "code",
+			"question": "How do you write code to show a p tag with the following message, 'You need JS' when Javascript is turned off?",
+			"answers": []
+		}
+	]
+}

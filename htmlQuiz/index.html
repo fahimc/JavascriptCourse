@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Quiz</title>
+		<meta name="author" content="fahim.chowdhury" />
+		<!-- Date: 2013-06-12 -->
+		<script type="text/javascript" src="lib/com/fahimchowdhury/toolkitMax-v1014-compressed.js"></script>
+		<script type="text/javascript" src="lib/com/fahimchowdhury/countdown.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+		<link type="text/css" rel="stylesheet" href="resource/css/style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="countdown"></div>
+			<h1 id="quizTitle"></h1>
+			<div id="regForm">
+				<ul>
+					<li>
+						First Name
+					</li>
+					<li>
+						<input type="text"  id="firstName" onfocus="onFocus()"/>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						Last Name
+					</li>
+					<li>
+						<input type="text"  id="lastName" onfocus="onFocus()"/>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						Email Address
+					</li>
+					<li>
+						<input type="text"  id="emailAdd" onfocus="onFocus()"/>
+					</li>
+				</ul>
+				<p>
+					This quiz will run for <span id="quizTime">0</span>
+				</p>
+				<div id="formError">Please fill in all fields and provide a valid email address</div>
+				<div id="formButton">
+					Start
+				</div>
+			</div>
+			<div id="quizHolder">
+
+				
+				<div id="questionHolder">
+					<p class="questionTitle">Question</p>
+					<p id="questionCopy"></p>
+					<ul id="answers"></ul>
+				</div>
+				<div id="nextButton">
+					Next
+				</div>
+				<div id="previousButton">
+					Previous
+				</div>
+			</div>
+			<div id="completeHolder">
+				<h1 id="waiting">Calculating your Result<br>Please wait</h1>
+				<div id="showResult">
+					<h1 class="resultTitle">Here is your Result</h1>
+					<p>You scored</p>
+					<p class="pecentage"><span id="perNumber"></span>%</p>
+					<p id="gradeMessage"></p>
+				</div>
+				
+			</div>
+			<iframe id="phpPost" name="phpPost"></iframe>
+		</div>
+	</body>
+</html>
+
